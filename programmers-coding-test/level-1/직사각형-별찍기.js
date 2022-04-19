@@ -20,21 +20,38 @@ process.stdin.on("data", (data) => {
 });
 
 //정답 2 - prove-ability
-process.stdin.setEncoding('utf8');
-process.stdin.on('data', data => {
-    const nums = data.split(" ");
-    const n = Number(nums[0]), m = Number(nums[1]);
-    
-    let result = "";
-    // 2차원으로 접근
-    // 세로 길이만큼 반복
-    for(let i = 0; i < m; i++) {
-        // 가로 길이만큼 별 더하기
-        for(let j = 0; j < n; j++) {
-            result += "*";
-        }
-        // 가로가 끝나면 줄내림
-        result += "\n";
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", (data) => {
+  const nums = data.split(" ");
+  const n = Number(nums[0]),
+    m = Number(nums[1]);
+
+  let result = "";
+  // 2차원으로 접근
+  // 세로 길이만큼 반복
+  for (let i = 0; i < m; i++) {
+    // 가로 길이만큼 별 더하기
+    for (let j = 0; j < n; j++) {
+      result += "*";
     }
-    console.log(result)
+    // 가로가 끝나면 줄내림
+    result += "\n";
+  }
+  console.log(result);
 });
+
+//정답 3 - yongchanson
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", (data) => {
+  const n = data.split(" ");
+  const a = Number(n[0]),
+    b = Number(n[1]);
+  console.log(("*".repeat(a) + `\n`).repeat(b));
+});
+/*
+<풀이과정>
+repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환한다. ex) str.repeat(count);
+1. '*'.repeat(a) : *를 a만큼 반복한다.
+2. \n : 줄 바꿈
+3. ('*'.repeat(a)+`\n`).repeat(b) : ('*'.repeat(a)+`\n`)를 b만큼 반복한다.
+*/
